@@ -19,7 +19,7 @@
 
 import Foundation
 
-class DEColor {
+public class DEColor {
 /*
 func Mask8(x: Any) -> Any {
     return x & 0xff
@@ -42,12 +42,12 @@ class func RGBAMake(r: Any, g: Any, b: Any, a: Any) -> Int {
 }
 */
     
-    class func RGBAMake(r:Int,g:Int,b:Int,a:Int) -> UInt32 {
+    public class func RGBAMake(r:Int,g:Int,b:Int,a:Int) -> UInt32 {
         return (UInt32(r) & 0xff | (UInt32(g) & 0xff) << 8 | (UInt32(b) & 0xff) << 16 | (UInt32(a) & 0xff) << 24)}
 
     //  Value float from 0..1
     // Alpha int 0..255
-    class func rgba3ColorGradient(from value: Float, alpha: Int, colors: Int) -> UInt32 {
+    public class func rgba3ColorGradient(from value: Float, alpha: Int, colors: Int) -> UInt32 {
         var red: Int = 0
         var blue: Int = 0
         var green: Int = 0
@@ -106,7 +106,7 @@ class func RGBAMake(r: Any, g: Any, b: Any, a: Any) -> Int {
 
     //  Value float from 0..1
     // Alpha int 0..255
-    class func rgba3ColorGradient(from value: Float, alpha: Int) -> UInt32 {
+    public class func rgba3ColorGradient(from value: Float, alpha: Int) -> UInt32 {
         let offset = Int(value * 256 * 5 - 1)
         let colorBase: Int = offset / 256
         let colorDelta: Int = offset % 256
